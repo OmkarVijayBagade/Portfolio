@@ -8,7 +8,7 @@ Here you'll find everything about me:
 ---
 
 ## ✨ Live Website
-👉 [**View Portfolio**](https://yourusername.github.io/my-portfolio/)  
+👉 [**View Portfolio**](https://omkarvijaybagade.github.io/Portfolio/)  
 
 ---
 
