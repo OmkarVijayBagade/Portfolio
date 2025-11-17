@@ -71,26 +71,36 @@ backToTop.addEventListener('click', () => {
 });
 
 // experience section 
-
 document.addEventListener("DOMContentLoaded", () => {
   const years = document.querySelectorAll(".year");
   const details = document.querySelectorAll(".detail");
 
-  years.forEach(year => {
-    year.addEventListener("click", () => {
-      years.forEach(y => y.classList.remove("active"));
-      year.classList.add("active");
+  // Utility function to show experience detail
+  function activateYear(yearElement) {
+    const selectedYear = yearElement.dataset.year;
 
-      details.forEach(detail => detail.style.display = "none");
-      document.getElementById(`detail-${year.dataset.year}`).style.display = "block";
-    });
+    // Remove active state from all
+    years.forEach(y => y.classList.remove("active"));
+    details.forEach(detail => (detail.style.display = "none"));
+
+    // Add active to clicked year
+    yearElement.classList.add("active");
+
+    // Show corresponding detail
+    const detailToShow = document.getElementById(`detail-${selectedYear}`);
+    if (detailToShow) detailToShow.style.display = "block";
+  }
+
+  // Attach events to all years
+  years.forEach(year => {
+    year.addEventListener("click", () => activateYear(year));
   });
 
-  // Default: show first year as active
-  years[0].classList.add("active");
+  // Default load: show first year + its detail
+  if (years[0]) activateYear(years[0]);
 });
 
-//redirection button 
+// redirection button 
 document.querySelectorAll(".redirect-icon").forEach(icon => {
   icon.addEventListener("click", () => {
     const link = icon.getAttribute("data-link");
