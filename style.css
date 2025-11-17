@@ -241,6 +241,37 @@ nav ul li a.active {
   }
 }
 
+.hidden-projects {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* Expanded state */
+.hidden-projects.show {
+  max-height: 2000px; /* large enough to fit many cards */
+}
+
+.view-more-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-more-btn {
+  background: #c69c6d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.view-more-btn:hover {
+  background: #b3895c;
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

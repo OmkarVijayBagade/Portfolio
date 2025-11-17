@@ -54,7 +54,19 @@ document.addEventListener("click", (e) => {
   }
 });
 
+//project section 
+  const btn = document.getElementById("viewMoreBtn");
+  const moreSection = document.getElementById("more-projects");
 
+  btn.addEventListener("click", () => {
+    moreSection.classList.toggle("show");
+
+    if (moreSection.classList.contains("show")) {
+      btn.textContent = "View Less";
+    } else {
+      btn.textContent = "View More";
+    }
+  })
 
 
 //back to top button 
