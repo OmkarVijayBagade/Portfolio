@@ -13,6 +13,11 @@ body {
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+  color: #c69c6d;
+}
+
 /* Navbar */
 header {
   position: fixed;
